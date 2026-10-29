@@ -1,0 +1,84 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---------------------------------------------------------------
+% Engineering report / thesis starter template
+% Compile with pdfLaTeX (Overleaf: Menu -> Compiler -> pdfLaTeX)
+% ---------------------------------------------------------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage[hidelinks]{hyperref}
+
+\title{Title of the Report}
+\author{Germ\'an Salazar}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Short summary of the work: problem, method and main result. Keep it under 200 words.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+State the problem and why it matters. End the section with the objective of the work.
+
+\section{Method}
+Describe the approach. Equations are numbered automatically:
+
+\begin{equation}
+  \tau = J\ddot{\theta} + b\dot{\theta} + \tau_{L}
+  \label{eq:motor}
+\end{equation}
+
+Equation~\eqref{eq:motor} is referenced by its label, so numbering stays correct if
+you add or remove equations.
+
+\subsection{Materials and equipment}
+List what was used. A table is often clearer than a list:
+
+\begin{table}[h]
+  \centering
+  \caption{Main components.}
+  \label{tab:components}
+  \begin{tabular}{llr}
+    \toprule
+    Component & Description & Qty. \\
+    \midrule
+    DC motor & 12 V, geared & 1 \\
+    Power stage & Two-transistor driver & 1 \\
+    Controller & Microcontroller board & 1 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Table~\ref{tab:components} is the standard way to refer to a table.
+
+\section{Results}
+Present the measurements, then interpret them. Figures go here:
+
+% Uncomment once you add figures/result.png to the project
+% \begin{figure}[h]
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{figures/result.png}
+%   \caption{Step response of the controlled plant.}
+%   \label{fig:step}
+% \end{figure}
+
+\section{Conclusions}
+One paragraph per finding. Do not introduce new information here.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
